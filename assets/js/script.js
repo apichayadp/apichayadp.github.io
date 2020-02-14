@@ -71,6 +71,16 @@
 
     // show number of correct answers out of total
     resultsContainer.innerHTML = `ถูกทั้งหมด ${numCorrect} ข้อ จาก ${myQuestions.length} ข้อ นะจ้ะ`;
+
+    if (numCorrect >= 12) {
+      resultsDescContainer.innerHTML = `อาหนูของอาพี่เก่งที่ซู๊ดดดดด ขอจุ๊บหน่อย ( •̀ ω •́ )✧`;
+    } else if (numCorrect < 12 && numCorrect >= 9) {
+      resultsDescContainer.innerHTML = `เยี่ยมครับผ๊ม อีกนิดจะถูกทั้งหมดแล้วน๊า (✿◡‿◡)`;
+    } else if (numCorrect < 9 && numCorrect >= 5) {
+      resultsDescContainer.innerHTML = `สบายสบาย กลางๆ กำลังดี เชื่อว่าเธอทำได้ดีกว่านี้น้า §(*￣▽￣*)§`;
+    } else {
+      resultsDescContainer.innerHTML = `w(ﾟДﾟ)w ได้น้อย แต่ก็รักค่ะ (กราบ) （＞人＜；）`;
+    }
   }
 
   function showSlide(n) {
@@ -104,6 +114,7 @@
   // Variables
   const quizContainer = document.getElementById('quiz');
   const resultsContainer = document.getElementById('results');
+  const resultsDescContainer = document.getElementById('results-desc');
   const submitButton = document.getElementById('submit');
   const myQuestions = [
     {
@@ -123,7 +134,7 @@
         a: "26 พ.ค. 2562",
         b: "27 พ.ค. 2562",
         c: "28 พ.ค. 2562",
-        c: "29 พ.ค. 2562"
+        d: "29 พ.ค. 2562"
       },
       correctAnswer: "b"
     },
@@ -158,52 +169,92 @@
       correctAnswer: "b"
     },
     {
-      question: "6.  ?",
+      question: "6. แล้วอาหนูสูงเท่าไหร่นะคะ ?",
       answers: {
-        a: "",
-        b: "",
-        c: "",
-        d: ""
-      },
-      correctAnswer: "d"
-    },
-    {
-      question: "7.  ?",
-      answers: {
-        a: "",
-        b: "",
-        c: "",
-        d: ""
-      },
-      correctAnswer: "a"
-    },
-    {
-      question: "8.  ?",
-      answers: {
-        a: "",
-        b: "",
-        c: "",
-        d: ""
-      },
-      correctAnswer: "c"
-    },
-    {
-      question: "9.  ?",
-      answers: {
-        a: "",
-        b: "",
-        c: "",
-        d: ""
+        a: "175",
+        b: "170",
+        c: "172",
+        d: "180"
       },
       correctAnswer: "b"
     },
     {
-      question: "10. จงเรียงรหัสลับนี้ให้อยู่ในลำดับที่ถูกต้อง",
+      question: "7. คนไหนเป็นตัวปลอม ?",
+      answers: {
+        a: "บี๋",
+        b: "อาพี่",
+        c: "ที่รัก",
+        d: "เจ้าหมี"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "8. คำต้องห้ามของอาหนู ?",
+      answers: {
+        a: "ไอ้เหี้ย",
+        b: "งี่เง่า",
+        c: "รำคาญ",
+        d: "หยุด"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "9. อาหนูส่งโปสการ์ดมาให้อาพี่กี่อันแล้ว ?",
+      answers: {
+        a: "3",
+        b: "4",
+        c: "5",
+        d: "6"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "10. เท่านี้ก็ได้ไปซบไหล่เค้าเลยคับ ..",
+      answers: {
+        a: "20.20",
+        b: "520.00",
+        c: "55.55",
+        d: "100.00"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "11. วันที่ที่เราคบกันคับ ?",
+      answers: {
+        a: "6",
+        b: "7",
+        c: "8",
+        d: "9"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "12. จงลำดับเหตุการณ์ .. (1) HOP INN | (2) SHANAPING IN MY AREA | (3) Serene Backyard Cafe & Eatery | (4) Tinder | (5) Nan | (6) TAIPEI",
+      answers: {
+        a: "(4) - (1) - (3) - (5) - (6) - (2)",
+        b: "(4) - (1) - (5) - (6) - (3) - (2)",
+        c: "(4) - (1) - (3) - (2) - (5) - (6)",
+        d: "(4) - (1) - (5) - (3) - (2) - (6)"
+      },
+      correctAnswer: "d"
+    },
+    {
+      question: "13. อาพี่รักอาหนูแค่ไหน ?",
+      answers: {
+        a: "เท่าโลก หมุนปั่นจิ้งหรีด 10 รอบ",
+        b: "รักมาก แต่น้อยกว่าอาหนูนิดนึง",
+        c: "เท่าบ้าน ปักษ์ใต้บ้านเฮา ลั่นล้า",
+        d: "เท่าเดินทางจากโลกไปพระจันทร์ แล้วก็กลับมาจากพระจันทร์อีกที"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "14. จงเรียงรหัสลับนี้ให้อยู่ในลำดับที่ถูกต้อง",
       answers: {
         a: "507 421 510 319",
-        b: "เปย์เก่ง",
+        b: "421 510 319 507",
         c: "510 319 421 507",
-        d: "ทั้งหมดเลยค่ะ อาหนูชอบอาพี่ไปหมด"
+        d: "319 507 510 421"
       },
       correctAnswer: "c"
     },
