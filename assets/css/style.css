@@ -87,3 +87,13 @@ hr {
   height: 200px;
   margin-top: 30px;
 }
+
+.quiz-btn-section {
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 600px) {
+  .quiz-btn-section {
+    margin-top: 100px;
+  }
+}
